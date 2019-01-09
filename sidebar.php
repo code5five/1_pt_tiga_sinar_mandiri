@@ -1,13 +1,3 @@
-<?php
-function parent_active() {
-
-}
-
-function child_active() {
-
-}
-?>
-
 <section class="sidebar">
   <div class="user-panel">
     <div class="pull-left image">
@@ -24,7 +14,7 @@ function child_active() {
 
     <li><a href="?page=dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
-    <li class="treeview">
+    <li class="treeview <?php parent_active("settings") ?>">
       <a href="#">
         <i class="fa fa-gear"></i>
         <span>Settings</span>
@@ -32,13 +22,13 @@ function child_active() {
           <i class="fa fa-angle-left pull-right"></i>
         </span>
       </a>
-      <ul class="treeview-menu" style="display: none;">
-        <li><a href="?page=user"><i class="fa fa-user"></i> User</a></li>
-        <li><a href="?page=aksi"><i class="fa fa-hand-paper-o"></i> Aksi</a></li>
+      <ul class="treeview-menu" style="<?php display_child("settings") ?>">
+        <li <?php child_active("user") ?>><a href="?page=user&parent=settings"><i class="fa fa-user"></i> User</a></li>
+        <li <?php child_active("aksi") ?>><a href="?page=aksi&parent=settings"><i class="fa fa-hand-paper-o"></i> Aksi</a></li>
       </ul>
     </li>
 
-    <li class="treeview">
+    <li class="treeview <?php parent_active("manajemen") ?>">
       <a href="#">
         <i class="fa fa-pencil-square-o"></i>
         <span>Manajemen</span>
@@ -46,17 +36,17 @@ function child_active() {
           <i class="fa fa-angle-left pull-right"></i>
         </span>
       </a>
-      <ul class="treeview-menu" style="display: none;">
-        <li><a href="?page=barang"><i class="fa fa-dropbox"></i> Stock & Barang</a></li>
-        <li><a href="?page=kategori"><i class="fa fa-google-wallet"></i> Kategori Barang</a></li>
-        <li><a href="?page=jenis"><i class="fa fa-square"></i> Jenis Bentuk</a></li>
-        <li><a href="?page=finishing"><i class="fa fa-paint-brush"></i> Finishing</a></li>
-        <li><a href="?page=pelanggan"><i class="fa fa-users"></i> Pelanggan</a></li>
-        <li><a href="?page=supplier"><i class="fa fa-ils"></i> Supplier</a></li>
+      <ul class="treeview-menu" style="<?php display_child("manajemen") ?>">
+        <li <?php child_active("barang") ?>><a href="?page=barang&parent=manajemen"><i class="fa fa-dropbox"></i> Stock & Barang</a></li>
+        <li <?php child_active("kategori") ?>><a href="?page=kategori&parent=manajemen"><i class="fa fa-google-wallet"></i> Kategori Barang</a></li>
+        <li <?php child_active("jenis") ?>><a href="?page=jenis&parent=manajemen"><i class="fa fa-square"></i> Jenis Bentuk</a></li>
+        <li <?php child_active("finishing") ?>><a href="?page=finishing&parent=manajemen"><i class="fa fa-paint-brush"></i> Finishing</a></li>
+        <li <?php child_active("pelanggan") ?>><a href="?page=pelanggan&parent=manajemen"><i class="fa fa-users"></i> Pelanggan</a></li>
+        <li <?php child_active("supplier") ?>><a href="?page=supplier&parent=manajemen"><i class="fa fa-ils"></i> Supplier</a></li>
       </ul>
     </li>
 
-    <li class="treeview">
+    <li class="treeview <?php parent_active("transaksi") ?>">
       <a href="#">
         <i class="fa fa-credit-card"></i>
         <span>Transaksi</span>
@@ -64,18 +54,18 @@ function child_active() {
           <i class="fa fa-angle-left pull-right"></i>
         </span>
       </a>
-      <ul class="treeview-menu" style="display: none;">
-        <li><a href="?page=transaksi_pembelian"><i class="fa fa-reply"></i> Pembelian</a></li>
-        <li><a href="?page=transaksi_pemasukan_lain"><i class="fa fa-reply-all"></i> Pemasukan Barang Lain</a></li>
-        <li><a href="?page=transaksi_penjualan"><i class="fa fa-share"></i> Penjualan</a></li>
-        <li><a href="?page=transaksi_pengeluaran_lain"><i class="fa fa-share"></i> Pengeluaran Barang Lain</a></li>
-        <li><a href="?page=transaksi_entry_stock_awal"><i class="fa fa-share-square-o"></i> Entry Stock Awal</a></li>
-        <li><a href="?page=transaksi_stock_opname"><i class="fa fa-chain"></i> Stock Opname</a></li>
-        <li><a href="?page=transaksi_closing_stock"><i class="fa fa-times-circle"></i> Closing Stock</a></li>
+      <ul class="treeview-menu" style="<?php display_child("transaksi") ?>">
+        <li <?php child_active("transaksi_pembelian") ?>><a href="?page=transaksi_pembelian&parent=transaksi"><i class="fa fa-reply"></i> Pembelian</a></li>
+        <li <?php child_active("transaksi_pemasukan_lain") ?>><a href="?page=transaksi_pemasukan_lain&parent=transaksi"><i class="fa fa-reply-all"></i> Pemasukan Barang Lain</a></li>
+        <li <?php child_active("transaksi_penjualan") ?>><a href="?page=transaksi_penjualan&parent=transaksi"><i class="fa fa-share"></i> Penjualan</a></li>
+        <li <?php child_active("transaksi_pengeluaran_lain") ?>><a href="?page=transaksi_pengeluaran_lain&parent=transaksi"><i class="fa fa-share"></i> Pengeluaran Barang Lain</a></li>
+        <li <?php child_active("transaksi_entry_stock_awal") ?>><a href="?page=transaksi_entry_stock_awal&parent=transaksi"><i class="fa fa-share-square-o"></i> Entry Stock Awal</a></li>
+        <li <?php child_active("transaksi_stock_opname") ?>><a href="?page=transaksi_stock_opname&parent=transaksi"><i class="fa fa-chain"></i> Stock Opname</a></li>
+        <li <?php child_active("transaksi_closing_stock") ?>><a href="?page=transaksi_closing_stock&parent=transaksi"><i class="fa fa-times-circle"></i> Closing Stock</a></li>
       </ul>
     </li>
 
-    <li class="treeview">
+    <li class="treeview <?php parent_active("laporan") ?>">
       <a href="#">
         <i class="fa fa-laptop"></i>
         <span>Laporan</span>
@@ -83,14 +73,42 @@ function child_active() {
           <i class="fa fa-angle-left pull-right"></i>
         </span>
       </a>
-      <ul class="treeview-menu" style="display: none;">
-        <li><a href="?page=laporan_rekap_saldo_stock"><i class="fa fa-file-text-o"></i> Rekap Saldo Stock</a></li>
-        <li><a href="?page=laporan_buku_stock"><i class="fa fa-book"></i> Buku Stock</a></li>
-        <li><a href="?page=laporan_history_pembelian"><i class="fa fa-bars"></i> History Pembelian</a></li>
-        <li><a href="?page=laporan_history_penjualan"><i class="fa fa-bars"></i> History Penjualan</a></li>
-        <li><a href="?page=laporan_mutasi_barang"><i class="fa fa-bus"></i> Mutasi Barang</a></li>
+      <ul class="treeview-menu" style="<?php display_child("laporan") ?>">
+        <li <?php child_active("laporan_rekap_saldo_stock") ?>><a href="?page=laporan_rekap_saldo_stock&parent=laporan"><i class="fa fa-file-text-o"></i> Rekap Saldo Stock</a></li>
+        <li <?php child_active("laporan_buku_stock") ?>><a href="?page=laporan_buku_stock&parent=laporan"><i class="fa fa-book"></i> Buku Stock</a></li>
+        <li <?php child_active("laporan_history_pembelian") ?>><a href="?page=laporan_history_pembelian&parent=laporan"><i class="fa fa-bars"></i> History Pembelian</a></li>
+        <li <?php child_active("laporan_history_penjualan") ?>><a href="?page=laporan_history_penjualan&parent=laporan"><i class="fa fa-bars"></i> History Penjualan</a></li>
+        <li <?php child_active("laporan_mutasi_barang") ?>><a href="?page=laporan_mutasi_barang&parent=laporan"><i class="fa fa-bus"></i> Mutasi Barang</a></li>
       </ul>
     </li>
 
   </ul>
 </section>
+
+<?php
+function parent_active($parent) {
+  if (isset($_GET['parent'])) {
+    if ($_GET['parent'] == $parent) {
+      echo "active menu-open";
+    }
+  }
+}
+
+function display_child($parent) {
+  if (isset($_GET['parent'])) {
+    if ($_GET['parent'] == $parent) {
+      echo "";
+    } else {
+      echo "display: none;";
+    }
+  }
+}
+
+function child_active($page) {
+  if (isset($_GET['page'])) {
+    if ($_GET['page'] == $page) {
+      echo "class=\"active\"";
+    }
+  }
+}
+?>
