@@ -12,7 +12,7 @@
   <ul class="sidebar-menu" data-widget="tree">
     <li class="header">MAIN MENU</li>
 
-    <li><a href="?page=dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+    <li <?php child_active("dashboard") ?>><a href="?page=dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
     <li class="treeview <?php parent_active("settings") ?>">
       <a href="#">
@@ -109,6 +109,8 @@ function child_active($page) {
     if ($_GET['page'] == $page) {
       echo "class=\"active\"";
     }
+  } else {
+    echo "class=\"active\"";
   }
 }
 ?>
