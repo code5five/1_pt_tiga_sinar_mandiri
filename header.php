@@ -1,4 +1,4 @@
-<a href="?page=dashboard" class="logo">
+<a href="index.php" class="logo">
     <span class="logo-mini"><b>T</b>SM</span>
     <span class="logo-lg">
         PT Tiga Sinar Mandiri
@@ -13,21 +13,10 @@
   <div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
       <li class="dropdown user user-menu">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <i></i>
-          <span class="hidden-xs">Test</span>
+        <a href="#" class="">
+          <i class="fa fa-sign-out"></i>
+          <span class="hidden-xs">Log out</span>
         </a>
-        <ul class="dropdown-menu">
-          <li class="user-header">
-            <img src="img/default_head.png" class="img-circle" alt="User Image">
-            <p>
-              Test
-            </p>
-          </li>
-          <li class="user-footer">
-            <a href="?page=logout" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
-          </li>
-        </ul>
       </li>
     </ul>
   </div>

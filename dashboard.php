@@ -1,6 +1,12 @@
+<?php include "helper.php" ?>
+
+<?php if (!isset($_SESSION['logged_in'])): ?>
+
 <!DOCTYPE html>
 <html>
   <?php include "head.php" ?>
+
+
   <body class="hold-transition skin-green sidebar-mini">
     <div class="wrapper">
       <header class="main-header"> <?php include "header.php"; ?> </header>
@@ -19,3 +25,9 @@
   </body>
   <?php include "script.php" ?>
 </html>
+
+<?php else: ?>
+
+
+
+<?php endif ?>
