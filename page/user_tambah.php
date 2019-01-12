@@ -6,6 +6,7 @@
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
     <li><a href="#">Settings</a></li>
+    <li><a href="#">User</a></li>
     <li class="active">User Tambah</li>
   </ol>
 </section>
@@ -27,56 +28,56 @@
 
         <div class="box-body" style="">
 
-          <form method="post" action="">
+          <form method="post" action="?action=user_tambah_post">
             <div class="row">
               <div class="col-md-12">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="">User Id</label>
-                      <input type="name" class="form-control" name="user_id" placeholder="Masukkan user id">
+                      <input type="name" class="form-control" name="user_id" placeholder="Masukkan user id" required>
                     </div>
 
                     <div class="form-group">
                       <label for="">Username</label>
-                      <input type="name" class="form-control" name="username" placeholder="Masukkan username">
+                      <input type="name" class="form-control" name="username" placeholder="Masukkan username" required>
                     </div>
 
                     <div class="form-group">
                       <label for="">Nama Lengkap</label>
-                      <input type="name" class="form-control" name="nama" placeholder="Masukkan nama lengkap">
+                      <input type="name" class="form-control" name="nama" placeholder="Masukkan nama lengkap" required>
                     </div>
 
                     <div class="form-group">
                       <label for="">Alamat</label>
-                      <textarea class="form-control" name="alamat" placeholder="Masukkan alamat" rows="4"></textarea>
+                      <textarea class="form-control" name="alamat" placeholder="Masukkan alamat" rows="4" required></textarea>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="">Password</label>
-                      <input type="password" class="form-control" name="password" placeholder="Masukkan password">
+                      <input type="password" class="form-control" name="password" placeholder="Masukkan password" required>
                     </div>
 
                     <div class="form-group">
                       <label for="">Konfirmasi Password</label>
-                      <input type="password" class="form-control" name="password_confirmation" placeholder="Masukkan konfirmasi password">
+                      <input type="password" class="form-control" name="password_confirmation" placeholder="Masukkan konfirmasi password" required>
                     </div>
 
                     <div class="form-group">
                       <label for="">Telepon</label>
-                      <input type="phone" class="form-control" name="phone" placeholder="Masukkan no telepon">
+                      <input type="phone" class="form-control" name="phone" placeholder="Masukkan no telepon" required>
                     </div>
 
                     <div class="form-group">
                       <label for="">Email</label>
-                      <input type="email" class="form-control" name="email" placeholder="Masukkan email">
+                      <input type="email" class="form-control" name="email" placeholder="Masukkan email" required>
                     </div>
 
                     <div class="form-group">
                       <label>Role</label>
-                      <select class="form-control" name="role">
+                      <select class="form-control" name="role" >
                         <option value="super_admin">super admin</option>
                         <option value="admin">admin</option>
                         <option value="sales">sales</option>
@@ -98,24 +99,4 @@
 
   </div>
 
-</section>
-
-<section class="content">
-  <?php
-  if (isset($_POST['submit'])) {
-    $user_id = $_POST['user_id'];
-    $username = $_POST['username'];
-    $nama = $_POST['nama'];
-    $alamat = $_POST['alamat'];
-    $password = $_POST['password'];
-    $password_confirmation = $_POST['password_confirmation'];
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
-    $role = $_POST['role'];
-
-    $user = new User;
-    $user->create_new_user($user_id, $username, $nama, $alamat, $password, $password_confirmation, $phone, $email, $role);
-  }
-
-  ?>
 </section>

@@ -7,8 +7,6 @@ if (isset($_GET['page'])) {
   elseif ($page == 'user') { include "page/user.php"; }
   elseif ($page == 'user_tambah') { include "page/user_tambah.php"; }
 
-} elseif (isset($_GET['action'])) {
-
 } else {
 
 }

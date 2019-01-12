@@ -7,6 +7,8 @@
   <?php include "head.php" ?>
 
 
+  <?php include "notification.php" ?>
+  <?php include "action.php" ?>
   <body class="hold-transition skin-green sidebar-mini">
     <div class="wrapper">
       <header class="main-header"> <?php include "header.php"; ?> </header>

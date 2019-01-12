@@ -109,7 +109,7 @@ function child_active($page) {
     if ($_GET['page'] == $page) {
       echo "class=\"active\"";
     }
-  } else {
+  } elseif ($page == 'dashboard') {
     echo "class=\"active\"";
   }
 }
