@@ -12,6 +12,7 @@
   <!-- Navbar Right Menu -->
   <div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
+      <li><a href="">Welcome, <?php echo $_SESSION['user']->nama ?></a></li>
       <li class="dropdown user user-menu">
         <a href="?action=logout" class="">
           <i class="fa fa-sign-out"></i>
