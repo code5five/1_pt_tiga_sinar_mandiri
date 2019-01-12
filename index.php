@@ -13,8 +13,11 @@
 
         <div class="collapse navbar-collapse pull-right" id="navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="dashboard.php">Dashboard</a></li>
-            <li><a href="page_login.php">Login</a></li>
+            <?php if (isset($_SESSION['user'])): ?>
+              <li><a href="dashboard.php">Dashboard</a></li>
+            <?php else: ?>
+              <li><a href="page_login.php">Login</a></li>
+            <?php endif ?>
           </ul>
         </div>
 
