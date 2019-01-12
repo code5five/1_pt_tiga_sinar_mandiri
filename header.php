@@ -13,7 +13,7 @@
   <div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
       <li class="dropdown user user-menu">
-        <a href="#" class="">
+        <a href="?action=logout" class="">
           <i class="fa fa-sign-out"></i>
           <span class="hidden-xs">Log out</span>
         </a>

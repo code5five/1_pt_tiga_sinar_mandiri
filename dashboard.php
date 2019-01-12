@@ -1,6 +1,6 @@
 <?php include "helper.php" ?>
 
-<?php if (!isset($_SESSION['logged_in'])): ?>
+<?php if (isset($_SESSION['user'])): ?>
 
 <!DOCTYPE html>
 <html>
@@ -30,6 +30,6 @@
 
 <?php else: ?>
 
-
+<?php header("Location: page_login.php") ?>
 
 <?php endif ?>

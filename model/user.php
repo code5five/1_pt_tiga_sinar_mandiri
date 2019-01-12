@@ -59,5 +59,20 @@ class User {
         $_SESSION['red-notice'] = "Error: " . $query . " : " . $conn->error;
     }
   }
+
+  function login($username, $password) {
+    include "lib/db_config.php";
+    $query = "SELECT * FROM tbl_user WHERE username='$username' AND password='$password'";
+    $users = $conn->query($query);
+
+    if ($users->num_rows > 0) {
+      $_SESSION['blue-notice'] = "Login berhasil";
+
+      $user = $users->fetch_object();
+      $_SESSION['user'] = $user;
+    } else {
+      $_SESSION['red-notice'] = "Login gagal";
+    }
+  }
 }
 ?>
