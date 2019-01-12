@@ -26,7 +26,7 @@
         </div>
 
         <div class="box-body" style="">
-          <a href="" class="btn btn-md btn-success"><i></i> Tambah User</a>
+          <a href="?page=user_tambah&parent=settings" class="btn btn-md btn-success"><i></i> Tambah User</a>
 
           <div class="row">
             <div class="col-md-12">
@@ -41,4 +41,14 @@
 
   </div>
 
+</section>
+
+<section class="content">
+  <?php
+    $user = new User;
+    $result = $user->get_all_user();
+    foreach ($result as $user) {
+      echo $user['id'];
+    }
+  ?>
 </section>
