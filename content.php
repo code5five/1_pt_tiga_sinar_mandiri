@@ -7,6 +7,7 @@ if (isset($_GET['page'])) {
   elseif ($page == 'user') { include "page/user.php"; }
   elseif ($page == 'user_tambah') { include "page/user_tambah.php"; }
   elseif ($page == 'user_edit') { include "page/user_edit.php"; }
+  elseif ($page == 'role') { include "page/role.php"; }
 
 } else {
 
