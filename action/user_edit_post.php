@@ -1,5 +1,6 @@
 <?php
 if (isset($_POST['submit'])) {
+  $id = $_POST['id'];
   $user_id = $_POST['user_id'];
   $username = $_POST['username'];
   $nama = $_POST['nama'];
@@ -11,7 +12,7 @@ if (isset($_POST['submit'])) {
   $role = $_POST['role'];
 
   $user = new User;
-  $user->create_new_user($user_id, $username, $nama, $alamat, $password, $phone, $email, $role);
+  $user->edit_user($id, $user_id, $username, $nama, $alamat, $password, $phone, $email, $role);
   header("Location: dashboard.php?page=user&parent=settings");
 }
 ?>

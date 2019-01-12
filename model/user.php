@@ -14,6 +14,7 @@ class User {
     include "lib/db_config.php";
     $query = "SELECT * FROM tbl_user WHERE id=$id";
     $user = $conn->query($query);
+    $user = $user->fetch_object();
     return $user;
   }
 
@@ -38,7 +39,8 @@ class User {
                                   password='$password',
                                   phone='$phone',
                                   email='$email',
-                                  role='$role'";
+                                  role='$role'
+              WHERE id=$id";
 
     if ($conn->query($query) === TRUE) {
         $_SESSION['blue-notice'] = "Data user berhasil dirubah";

@@ -24,7 +24,7 @@
       </a>
       <ul class="treeview-menu" style="<?php display_child("settings") ?>">
         <li <?php child_active("user") ?>><a href="?page=user&parent=settings"><i class="fa fa-user"></i> User</a></li>
-        <li <?php child_active("aksi") ?>><a href="?page=aksi&parent=settings"><i class="fa fa-hand-paper-o"></i> Aksi</a></li>
+        <li <?php child_active("role") ?>><a href="?page=role&parent=settings"><i class="fa fa-hand-paper-o"></i> Role</a></li>
       </ul>
     </li>
 
