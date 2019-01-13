@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jan 12, 2019 at 08:55 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Host: 127.0.0.1
+-- Generation Time: Jan 13, 2019 at 02:57 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -60,8 +60,16 @@ CREATE TABLE `tbl_customer` (
   `fax` varchar(100) NOT NULL,
   `contact_person` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `keterangan` text NOT NULL
+  `keterangan` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_customer`
+--
+
+INSERT INTO `tbl_customer` (`id`, `kode`, `nama`, `alamat`, `phone`, `fax`, `contact_person`, `email`, `keterangan`) VALUES
+(2, 'PELANGGAN0001', 'PT Go-Code', 'Jl. H Junib No. 18 RT 014 RW 007', '082248080870', '81354141927', '586953', 'developmentcode5@gmail.com', 'Mantul'),
+(3, 'PELANGGAN0002', 'PT CODE5FIVE', 'Jl. H Junib No. 18 RT 014 RW 007', '082248080870', '81354141927', '586953', 'ryanjoker87@gmail.com', 'Mantul');
 
 -- --------------------------------------------------------
 
@@ -74,6 +82,13 @@ CREATE TABLE `tbl_finishing` (
   `kode` varchar(100) NOT NULL,
   `nama` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_finishing`
+--
+
+INSERT INTO `tbl_finishing` (`id`, `kode`, `nama`) VALUES
+(2, 'FINISHING0001', 'Menambah Panjang Baut');
 
 -- --------------------------------------------------------
 
@@ -114,6 +129,13 @@ CREATE TABLE `tbl_jenis` (
   `nama` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tbl_jenis`
+--
+
+INSERT INTO `tbl_jenis` (`id`, `kode`, `nama`) VALUES
+(1, 'JENIS00001', 'BAUT KECIL ROLE');
+
 -- --------------------------------------------------------
 
 --
@@ -125,6 +147,13 @@ CREATE TABLE `tbl_kategori` (
   `kode` varchar(100) NOT NULL,
   `nama` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_kategori`
+--
+
+INSERT INTO `tbl_kategori` (`id`, `kode`, `nama`) VALUES
+(3, 'KATEGORI0001', 'BAUT FIZ R');
 
 -- --------------------------------------------------------
 
@@ -165,6 +194,13 @@ CREATE TABLE `tbl_supplier` (
   `email` varchar(100) NOT NULL,
   `keterangan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_supplier`
+--
+
+INSERT INTO `tbl_supplier` (`id`, `kode`, `nama`, `alamat`, `phone`, `fax`, `contact_person`, `email`, `keterangan`) VALUES
+(1, 'SUPPLIER0001', 'Muhammad Iriansyah Putra Pratama', 'Jl. H Junib No. 18 RT 014 RW 007', '082248080870', '81354141927', '586953', 'iriansyah1431299@sttpln.ac.id', 'Mantul');
 
 -- --------------------------------------------------------
 
@@ -364,13 +400,13 @@ ALTER TABLE `tbl_barang`
 -- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_finishing`
 --
 ALTER TABLE `tbl_finishing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_gudang`
@@ -388,13 +424,13 @@ ALTER TABLE `tbl_harga_jual`
 -- AUTO_INCREMENT for table `tbl_jenis`
 --
 ALTER TABLE `tbl_jenis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_role`
@@ -406,7 +442,7 @@ ALTER TABLE `tbl_role`
 -- AUTO_INCREMENT for table `tbl_supplier`
 --
 ALTER TABLE `tbl_supplier`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_transaksi_customer`
@@ -436,7 +472,7 @@ ALTER TABLE `tbl_transaksi_supplier_detail`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
