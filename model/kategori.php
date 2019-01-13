@@ -18,61 +18,41 @@ class Category {
     return $category;
   }
 
-  function create_new_user($user_id, $username, $nama, $alamat, $password, $phone, $email, $role) {
+  function create_new_category($category_code, $nama) {
     include "lib/db_config.php";
-    $query = "INSERT INTO tbl_user (id, user_id, username, nama, password, phone, alamat, email, role)
-              VALUES ('', '$user_id', '$username', '$nama', '$password', '$phone', '$alamat', '$email', '$role')";
+    $query = "INSERT INTO tbl_kategori (id, kode, nama)
+              VALUES ('', '$category_code', '$nama')";
 
     if ($conn->query($query) === TRUE) {
-        $_SESSION['blue-notice'] = "Data user berhasil ditambahkan";
+        $_SESSION['blue-notice'] = "Data kategori berhasil ditambahkan";
     } else {
         $_SESSION['red-notice'] = "Error: " . $query . " : " . $conn->error;
     }
   }
 
-  function edit_user($id, $user_id, $username, $nama, $alamat, $password, $phone, $email, $role) {
+  function edit_category($id, $category_code, $nama) {
     include "lib/db_config.php";
-    $query = "UPDATE tbl_user SET user_id='$user_id',
-                                  username='$username',
-                                  nama='$nama',
-                                  alamat='$alamat',
-                                  password='$password',
-                                  phone='$phone',
-                                  email='$email',
-                                  role='$role'
+    $query = "UPDATE tbl_kategori SET kode='$category_code',
+                                  nama='$nama'
               WHERE id=$id";
 
     if ($conn->query($query) === TRUE) {
         $_SESSION['blue-notice'] = "Data user berhasil dirubah";
     } else {
-        $_SESSION['red-notice'] = "Error: " . $query . " : " . $conn->error;
+        $_SESSION['red-notice'] = "Error: " . $query . " : " . $conn->error;  
     }
   }
 
   function delete($id) {
     include "lib/db_config.php";
-    $query = "DELETE FROM tbl_user WHERE id = $id";
+    $query = "DELETE FROM tbl_kategori WHERE id = $id";
 
     if ($conn->query($query) === TRUE) {
-        $_SESSION['blue-notice'] = "Data user berhasil dihapus";
+        $_SESSION['blue-notice'] = "Data kategori berhasil dihapus";
     } else {
         $_SESSION['red-notice'] = "Error: " . $query . " : " . $conn->error;
     }
   }
 
-  function login($username, $password) {
-    include "lib/db_config.php";
-    $query = "SELECT * FROM tbl_user WHERE username='$username' AND password='$password'";
-    $users = $conn->query($query);
-
-    if ($users->num_rows > 0) {
-      $_SESSION['blue-notice'] = "Login berhasil";
-
-      $user = $users->fetch_object();
-      $_SESSION['user'] = $user;
-    } else {
-      $_SESSION['red-notice'] = "Login gagal";
-    }
-  }
 }
 ?>

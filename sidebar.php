@@ -23,7 +23,7 @@
         </span>
       </a>
       <ul class="treeview-menu" style="<?php display_child("settings") ?>">
-        <li <?php child_active("user") ?>><a href="?page=user&parent=settings"><i class="fa fa-user"></i> User</a></li>
+        <li <?php if (child_active("user") || child_active("user_tambah") || child_active("user_edit")) ?>><a href="?page=user&parent=settings"><i class="fa fa-user"></i> User</a></li>
         <li <?php child_active("role") ?>><a href="?page=role&parent=settings"><i class="fa fa-hand-paper-o"></i> Role</a></li>
       </ul>
     </li>
@@ -38,11 +38,11 @@
       </a>
       <ul class="treeview-menu" style="<?php display_child("manajemen") ?>">
         <li <?php child_active("barang") ?>><a href="?page=barang&parent=manajemen"><i class="fa fa-dropbox"></i> Stock & Barang</a></li>
-        <li <?php child_active("kategori") ?>><a href="?page=kategori&parent=manajemen"><i class="fa fa-google-wallet"></i> Kategori Barang</a></li>
-        <li <?php child_active("jenis") ?>><a href="?page=jenis&parent=manajemen"><i class="fa fa-square"></i> Jenis Bentuk</a></li>
-        <li <?php child_active("finishing") ?>><a href="?page=finishing&parent=manajemen"><i class="fa fa-paint-brush"></i> Finishing</a></li>
-        <li <?php child_active("pelanggan") ?>><a href="?page=pelanggan&parent=manajemen"><i class="fa fa-users"></i> Pelanggan</a></li>
-        <li <?php child_active("supplier") ?>><a href="?page=supplier&parent=manajemen"><i class="fa fa-ils"></i> Supplier</a></li>
+        <li <?php if (child_active("kategori") || child_active("kategori_tambah") || child_active("kategori_edit")) ?>><a href="?page=kategori&parent=manajemen"><i class="fa fa-google-wallet"></i> Kategori Barang</a></li>
+        <li <?php if (child_active("jenis") || child_active("jenis_tambah") || child_active("jenis_edit")) ?>><a href="?page=jenis&parent=manajemen"><i class="fa fa-square"></i> Jenis Bentuk</a></li>
+        <li <?php if (child_active("finishing") || child_active("finishing_tambah") || child_active("finishing_edit")) ?>><a href="?page=finishing&parent=manajemen"><i class="fa fa-paint-brush"></i> Finishing</a></li>
+        <li <?php if (child_active("pelanggan") || child_active("pelanggan_tambah") || child_active("pelanggan_edit")) ?>><a href="?page=pelanggan&parent=manajemen"><i class="fa fa-users"></i> Pelanggan</a></li>
+        <li <?php if (child_active("supplier") || child_active("supplier_tambah") || child_active("supplier_edit")) ?>><a href="?page=supplier&parent=manajemen"><i class="fa fa-ils"></i> Supplier</a></li>
       </ul>
     </li>
 

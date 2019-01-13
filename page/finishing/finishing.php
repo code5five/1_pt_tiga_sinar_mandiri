@@ -1,17 +1,17 @@
 <?php
-  $user = new User;
-  $result = $user->get_all_user();
+  $finishing = new Finishing;
+  $result = $finishing->get_all_finishing();
 ?>
 
 <section class="content-header">
   <h1>
-    User
-    <small>Manajemen pengguna</small>
+    Finishing
+    <small>Manajemen finishing barang</small>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
     <li><a href="#">Settings</a></li>
-    <li class="active">User</li>
+    <li class="active">Finishing</li>
   </ol>
 </section>
 
@@ -22,7 +22,7 @@
     <div class="col-md-12">
       <div class="box box-success box-solid">
         <div class="box-header with-border">
-          <h3 class="box-title">Data User</h3>
+          <h3 class="box-title">Data Finishing</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -31,13 +31,13 @@
         </div>
 
         <div class="box-body" style="">
-          <a href="?page=user_tambah&parent=settings" class="btn btn-md btn-success"><i></i> Tambah User</a>
+          <a href="?page=finishing_tambah&parent=manajemen" class="btn btn-md btn-success"><i></i> Tambah Finishing</a>
 
           <div class="row">
             <div class="col-md-12">
               <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Tabel user</h3>
+              <h3 class="box-title">Tabel Finishing</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -45,33 +45,21 @@
                 <thead>
                   <tr role="row">
                     <th>Id</th>
-                    <th>User Id</th>
-                    <th>Username</th>
+                    <th>Kode</th>
                     <th>Nama</th>
-                    <th>Password</th>
-                    <th>Phone</th>
-                    <th>Alamat</th>
-                    <th>Email</th>
-                    <th>Role</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
 
                 <tbody>
-                  <?php foreach ($result as $user): ?>
+                  <?php foreach ($result as $finishing): ?>
                     <tr>
-                      <td><?php echo $user['id']; ?></td>
-                      <td><?php echo $user['user_id']; ?></td>
-                      <td><?php echo $user['username']; ?></td>
-                      <td><?php echo $user['nama']; ?></td>
-                      <td><?php echo $user['password']; ?></td>
-                      <td><?php echo $user['phone']; ?></td>
-                      <td><?php echo $user['alamat']; ?></td>
-                      <td><?php echo $user['email']; ?></td>
-                      <td><?php echo $user['role']; ?></td>
+                      <td><?php echo $finishing['id']; ?></td>
+                      <td><?php echo $finishing['kode']; ?></td>
+                      <td><?php echo $finishing['nama']; ?></td>
                       <td>
-                        <a href="?page=user_edit&parent=settings&id=<?php echo $user['id'] ?>" class="btn btn-info btn-xs">edit</a>
-                        <a href="?action=user_delete_post&id=<?php echo $user['id'] ?>" class="btn btn-danger btn-xs" onclick="return confirm('Anda yakin?')">delete</a>
+                        <a href="?page=finishing_edit&parent=manajemen&id=<?php echo $finishing['id'] ?>" class="btn btn-info btn-xs">edit</a>
+                        <a href="?action=finishing_delete_post&id=<?php echo $finishing['id'] ?>" class="btn btn-danger btn-xs" onclick="return confirm('Anda yakin?')">delete</a>
                       </td>
                     </tr>
                   <?php endforeach ?>

@@ -58,8 +58,8 @@
                       <td><?php echo $categories['kode']; ?></td>
                       <td><?php echo $categories['nama']; ?></td>
                       <td>
-                        <a href="?page=kategori_edit&id=<?php echo $user['id'] ?>" class="btn btn-info btn-xs">edit</a>
-                        <a href="?action=kategori_delete_post&id=<?php echo $user['id'] ?>" class="btn btn-danger btn-xs" onclick="return confirm('Anda yakin?')">delete</a>
+                        <a href="?page=kategori_edit&parent=manajemen&id=<?php echo $categories['id'] ?>" class="btn btn-info btn-xs">edit</a>
+                        <a href="?action=kategori_delete_post&id=<?php echo $categories['id'] ?>" class="btn btn-danger btn-xs" onclick="return confirm('Anda yakin?')">delete</a>
                       </td>
                     </tr>
                   <?php endforeach ?>
