@@ -24,7 +24,7 @@
       </a>
       <ul class="treeview-menu" style="<?php display_child("settings") ?>">
         <li <?php if (child_active("user") || child_active("user_tambah") || child_active("user_edit")) ?>><a href="?page=user&parent=settings"><i class="fa fa-user"></i> User</a></li>
-        <li <?php child_active("role") ?>><a href="?page=role&parent=settings"><i class="fa fa-hand-paper-o"></i> Role</a></li>
+        <li <?php if (child_active("role") || child_active("role_tambah") || child_active("role_edit")) ?>><a href="?page=role&parent=settings"><i class="fa fa-hand-paper-o"></i> Role</a></li>
       </ul>
     </li>
 

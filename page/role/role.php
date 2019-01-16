@@ -1,6 +1,6 @@
 <?php
   $role = new Role;
-  $result = $role->get_all_user();
+  $result = $role->get_all_role();
 ?>
 
 <section class="content-header">
@@ -31,7 +31,7 @@
         </div>
 
         <div class="box-body" style="">
-          <a href="?page=user_tambah&parent=settings" class="btn btn-md btn-success"><i></i> Tambah Role</a>
+          <a href="?page=role_tambah&parent=settings" class="btn btn-md btn-success"><i></i> Tambah Role</a>
 
           <div class="row">
             <div class="col-md-12">

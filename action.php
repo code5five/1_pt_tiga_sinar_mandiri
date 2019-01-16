@@ -8,6 +8,11 @@ if (isset($_GET['action'])) {
   elseif ($action == 'user_delete_post') { include "action/user/user_delete_post.php"; }
   elseif ($action == 'user_edit_post') { include "action/user/user_edit_post.php"; }
 
+  // ----------------------- Role -------------------------
+  if ($action == 'role_tambah_post') { include "action/role/role_tambah_post.php"; }
+  elseif ($action == 'role_delete_post') { include "action/role/role_delete_post.php"; }
+  elseif ($action == 'role_edit_post') { include "action/role/role_edit_post.php"; }
+
   // ----------------------- Kategori -------------------------
   if ($action == 'kategori_tambah_post') { include "action/kategori/kategori_tambah_post.php"; }
   elseif ($action == 'kategori_delete_post') { include "action/kategori/kategori_delete_post.php"; }
