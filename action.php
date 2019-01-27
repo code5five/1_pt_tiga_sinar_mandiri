@@ -38,6 +38,11 @@ if (isset($_GET['action'])) {
   elseif ($action == 'supplier_delete_post') { include "action/supplier/supplier_delete_post.php"; }
   elseif ($action == 'supplier_edit_post') { include "action/supplier/supplier_edit_post.php"; }
 
+  // ----------------------- Barang ------------------
+  if ($action == 'barang_tambah_post') { include "action/barang/barang_tambah_post.php"; }
+  elseif ($action == 'barang_delete_post') { include "action/barang/barang_delete_post.php"; }
+  elseif ($action == 'barang_edit_post') { include "action/barang/barang_edit_post.php"; }
+
   elseif ($action == 'logout') { include "action/logout_post.php"; }
 
 } else {
