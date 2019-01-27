@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 27, 2019 at 08:05 AM
+-- Generation Time: Jan 27, 2019 at 03:08 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -322,10 +322,10 @@ INSERT INTO `tbl_user` (`id`, `user_id`, `username`, `nama`, `password`, `phone`
 --
 ALTER TABLE `tbl_barang`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `kategori_id` (`kategori_id`),
-  ADD UNIQUE KEY `jenis_id` (`jenis_id`),
-  ADD UNIQUE KEY `finishing_id` (`finishing_id`),
-  ADD UNIQUE KEY `gudang_id` (`gudang_id`);
+  ADD KEY `kategori_id` (`kategori_id`) USING BTREE,
+  ADD KEY `jenis_id` (`jenis_id`) USING BTREE,
+  ADD KEY `gudang_id` (`gudang_id`) USING BTREE,
+  ADD KEY `finishing_id` (`finishing_id`) USING BTREE;
 
 --
 -- Indexes for table `tbl_customer`
@@ -422,7 +422,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_barang`
 --
 ALTER TABLE `tbl_barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_customer`
