@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
   $nama = $_POST['nama'];
 
   $jenis = new Jenis;
-  $jenis->edit_jenis($id,$jenis_code, $nama);
+  $jenis->edit_jenis($id, $jenis_code, $nama);
   header("Location: dashboard.php?page=jenis&parent=manajemen");
 }
 ?>

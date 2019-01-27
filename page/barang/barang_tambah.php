@@ -94,7 +94,7 @@
 
                     <div class="form-group">
                       <button class="btn btn-success" type="submit" name="submit">Submit</button>
-                      <a href="?page=finishing&parent=manajemen" class="btn btn-danger">Back</a>
+                      <a href="?page=barang&parent=manajemen" class="btn btn-danger">Back</a>
                     </div>
 
                   </div>

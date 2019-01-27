@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
   $nama = $_POST['nama'];
 
   $finishing = new Finishing;
-  $finishing->edit_finishing($id,$finishing_code, $nama);
+  $finishing->edit_finishing($id, $finishing_code, $nama);
   header("Location: dashboard.php?page=finishing&parent=manajemen");
 }
 ?>
