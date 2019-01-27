@@ -10,7 +10,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="#">Settings</a></li>
+    <li><a href="#">Manajemen</a></li>
     <li class="active">Jenis</li>
   </ol>
 </section>

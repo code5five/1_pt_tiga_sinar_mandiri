@@ -43,6 +43,7 @@
         <li <?php if (child_active("finishing") || child_active("finishing_tambah") || child_active("finishing_edit")) ?>><a href="?page=finishing&parent=manajemen"><i class="fa fa-paint-brush"></i> Finishing</a></li>
         <li <?php if (child_active("pelanggan") || child_active("pelanggan_tambah") || child_active("pelanggan_edit")) ?>><a href="?page=pelanggan&parent=manajemen"><i class="fa fa-users"></i> Pelanggan</a></li>
         <li <?php if (child_active("supplier") || child_active("supplier_tambah") || child_active("supplier_edit")) ?>><a href="?page=supplier&parent=manajemen"><i class="fa fa-ils"></i> Supplier</a></li>
+        <li <?php if (child_active("gudang") || child_active("gudang_tambah") || child_active("gudang_edit")) ?>><a href="?page=gudang&parent=manajemen"><i class="fa fa-toggle-down"></i> Gudang</a></li>
       </ul>
     </li>
 

@@ -40,6 +40,11 @@ if (isset($_GET['page'])) {
   elseif ($page == 'role_tambah') { include "page/role/role_tambah.php"; }
   elseif ($page == 'role_edit') { include "page/role/role_edit.php"; }
 
+  // -------------------- Barang -----------------------------
+  elseif ($page == 'barang') { include "page/barang/barang.php"; }
+  elseif ($page == 'barang_tambah') { include "page/barang/barang_tambah.php"; }
+  elseif ($page == 'barang_edit') { include "page/barang/barang_edit.php"; }
+
 } else {
 
 }
