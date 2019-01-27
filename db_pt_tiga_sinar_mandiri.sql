@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 27, 2019 at 03:08 PM
+-- Generation Time: Jan 27, 2019 at 03:30 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -50,7 +50,8 @@ CREATE TABLE `tbl_barang` (
 --
 
 INSERT INTO `tbl_barang` (`id`, `kode`, `nama`, `stok`, `kategori_id`, `jenis_id`, `finishing_id`, `satuan`, `harga_beli`, `harga_jual`, `harga_jual_disc`, `keterangan`, `gudang_id`, `created_at`) VALUES
-(2, 'BARANG-01', 'NAMA BARANG-01', 10, 1, 1, 1, 'UNIT', 5000, 10000, 9500, 'KETERANGAN BARANG-01', 1, '2019-01-27 11:57:43');
+(2, 'BARANG-01', 'NAMA BARANG-01', 15, 1, 1, 1, 'UNIT', 5000, 10000, 9500, 'KETERANGAN BARANG-01', 1, '2019-01-27 11:57:43'),
+(5, 'BARANG-002', 'NAMA BARANG-002', 500, 1, 1, 1, 'SATUAN BARANG-002', 5000, 10000, 10000, 'KETERANGAN BARANG-002', 1, '2019-01-27 21:28:56');
 
 -- --------------------------------------------------------
 
@@ -422,7 +423,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_barang`
 --
 ALTER TABLE `tbl_barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_customer`
