@@ -33,7 +33,7 @@ class Jenis {
   function edit_jenis($id, $jenis_code, $nama) {
     include "lib/db_config.php";
     $query = "UPDATE tbl_jenis SET kode='$jenis_code',
-                                  nama='$nama'
+                                   nama='$nama'
               WHERE id=$id";
 
     if ($conn->query($query) === TRUE) {

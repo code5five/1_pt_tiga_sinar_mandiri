@@ -33,13 +33,13 @@ class Pelanggan {
   function edit_pelanggan($id, $pelanggan_kode, $nama, $alamat, $phone, $fax, $contact_person, $email, $keterangan) {
     include "lib/db_config.php";
     $query = "UPDATE tbl_customer SET kode='$pelanggan_kode',
-                                  nama='$nama',
-                                  alamat='$alamat',
-                                  phone='$phone',
-                                  fax='$fax',
-                                  contact_person='$contact_person',
-                                  email='$email',
-                                  keterangan='$keterangan'
+                                      nama='$nama',
+                                      alamat='$alamat',
+                                      phone='$phone',
+                                      fax='$fax',
+                                      contact_person='$contact_person',
+                                      email='$email',
+                                      keterangan='$keterangan'
               WHERE id=$id";
 
     if ($conn->query($query) === TRUE) {

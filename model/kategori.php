@@ -33,7 +33,7 @@ class Category {
   function edit_category($id, $category_code, $nama) {
     include "lib/db_config.php";
     $query = "UPDATE tbl_kategori SET kode='$category_code',
-                                  nama='$nama'
+                                      nama='$nama'
               WHERE id=$id";
 
     if ($conn->query($query) === TRUE) {

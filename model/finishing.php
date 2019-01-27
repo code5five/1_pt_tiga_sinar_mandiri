@@ -33,7 +33,7 @@ class Finishing {
   function edit_finishing($id, $finishing_code, $nama) {
     include "lib/db_config.php";
     $query = "UPDATE tbl_finishing SET kode='$finishing_code',
-                                  nama='$nama'
+                                       nama='$nama'
               WHERE id=$id";
 
     if ($conn->query($query) === TRUE) {
