@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 27, 2019 at 06:02 AM
+-- Generation Time: Jan 27, 2019 at 08:05 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -231,6 +231,11 @@ CREATE TABLE `tbl_transaksi_customer` (
   `kode` varchar(100) NOT NULL,
   `customer_id` int(11) NOT NULL,
   `tanggal` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `batch_number` varchar(100) NOT NULL,
+  `total_price` int(11) NOT NULL,
+  `discount` int(11) NOT NULL,
+  `grand_total_price` int(11) NOT NULL,
+  `keterangan` varchar(100) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -260,6 +265,11 @@ CREATE TABLE `tbl_transaksi_supplier` (
   `kode` varchar(100) NOT NULL,
   `supplier_id` int(11) NOT NULL,
   `tanggal` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `batch_number` varchar(100) NOT NULL,
+  `total_price` int(11) NOT NULL,
+  `discount` int(11) NOT NULL,
+  `grand_total_price` int(11) NOT NULL,
+  `keterangan` varchar(100) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
