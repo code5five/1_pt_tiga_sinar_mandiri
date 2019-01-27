@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 13, 2019 at 02:57 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.2.12
+-- Host: localhost
+-- Generation Time: Jan 27, 2019 at 06:02 AM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -45,6 +45,13 @@ CREATE TABLE `tbl_barang` (
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tbl_barang`
+--
+
+INSERT INTO `tbl_barang` (`id`, `kode`, `nama`, `stok`, `kategori_id`, `jenis_id`, `finishing_id`, `satuan`, `harga_beli`, `harga_jual`, `harga_jual_disc`, `keterangan`, `gudang_id`, `created_at`) VALUES
+(2, 'BARANG-01', 'NAMA BARANG-01', 10, 1, 1, 1, 'UNIT', 5000, 10000, 9500, 'KETERANGAN BARANG-01', 1, '2019-01-27 11:57:43');
+
 -- --------------------------------------------------------
 
 --
@@ -60,7 +67,7 @@ CREATE TABLE `tbl_customer` (
   `fax` varchar(100) NOT NULL,
   `contact_person` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `keterangan` text
+  `keterangan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -68,8 +75,8 @@ CREATE TABLE `tbl_customer` (
 --
 
 INSERT INTO `tbl_customer` (`id`, `kode`, `nama`, `alamat`, `phone`, `fax`, `contact_person`, `email`, `keterangan`) VALUES
-(2, 'PELANGGAN0001', 'PT Go-Code', 'Jl. H Junib No. 18 RT 014 RW 007', '082248080870', '81354141927', '586953', 'developmentcode5@gmail.com', 'Mantul'),
-(3, 'PELANGGAN0002', 'PT CODE5FIVE', 'Jl. H Junib No. 18 RT 014 RW 007', '082248080870', '81354141927', '586953', 'ryanjoker87@gmail.com', 'Mantul');
+(1, 'PELANGGAN-001', 'NAMA PELANGGAN-001', 'ALAMAT PELANGGAN-001', '12345678', '12345678', '12345678', 'PELANGGAN-001@email.com', ''),
+(2, 'PELANGGAN-002', 'NAMA PELANGGAN-002', 'ALAMAT PELANGGAN-002', '12345678', '12345678', '12345678', 'PELANGGAN-002@email.com', '');
 
 -- --------------------------------------------------------
 
@@ -88,7 +95,8 @@ CREATE TABLE `tbl_finishing` (
 --
 
 INSERT INTO `tbl_finishing` (`id`, `kode`, `nama`) VALUES
-(2, 'FINISHING0001', 'Menambah Panjang Baut');
+(1, 'FINISHING-01', 'FINISHING-01'),
+(2, 'FINISHING-02', 'FINISHING-02');
 
 -- --------------------------------------------------------
 
@@ -103,6 +111,13 @@ CREATE TABLE `tbl_gudang` (
   `alamat` text NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_gudang`
+--
+
+INSERT INTO `tbl_gudang` (`id`, `kode`, `nama`, `alamat`, `active`) VALUES
+(1, 'GUDANG-01', 'NAMA GUDANG-01', 'ALAMAT GUDANG-01', 1);
 
 -- --------------------------------------------------------
 
@@ -134,7 +149,8 @@ CREATE TABLE `tbl_jenis` (
 --
 
 INSERT INTO `tbl_jenis` (`id`, `kode`, `nama`) VALUES
-(1, 'JENIS00001', 'BAUT KECIL ROLE');
+(1, 'BENTUK-01', 'BENTUK-01'),
+(2, 'BENTUK-02', 'BENTUK-02');
 
 -- --------------------------------------------------------
 
@@ -153,7 +169,8 @@ CREATE TABLE `tbl_kategori` (
 --
 
 INSERT INTO `tbl_kategori` (`id`, `kode`, `nama`) VALUES
-(3, 'KATEGORI0001', 'BAUT FIZ R');
+(1, 'KATEGORI-01', 'KATEGORI-01'),
+(2, 'KATEGORI-02', 'KATEGORI-02');
 
 -- --------------------------------------------------------
 
@@ -200,7 +217,8 @@ CREATE TABLE `tbl_supplier` (
 --
 
 INSERT INTO `tbl_supplier` (`id`, `kode`, `nama`, `alamat`, `phone`, `fax`, `contact_person`, `email`, `keterangan`) VALUES
-(1, 'SUPPLIER0001', 'Muhammad Iriansyah Putra Pratama', 'Jl. H Junib No. 18 RT 014 RW 007', '082248080870', '81354141927', '586953', 'iriansyah1431299@sttpln.ac.id', 'Mantul');
+(1, 'SUPPLIER-01', 'NAMA SUPPLIER-01', 'ALAMAT SUPPLIER-01', '12345678', '12345678', '12345678', 'SUPPLIER-01@email.com', ''),
+(2, 'SUPPLIER-02', 'NAMA SUPPLIER-02', 'ALAMAT SUPPLIER-02', '12345678', '12345678', '12345678', 'SUPPLIER-02@email.com', '');
 
 -- --------------------------------------------------------
 
@@ -394,25 +412,25 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_barang`
 --
 ALTER TABLE `tbl_barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_finishing`
 --
 ALTER TABLE `tbl_finishing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_gudang`
 --
 ALTER TABLE `tbl_gudang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_harga_jual`
@@ -424,13 +442,13 @@ ALTER TABLE `tbl_harga_jual`
 -- AUTO_INCREMENT for table `tbl_jenis`
 --
 ALTER TABLE `tbl_jenis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_role`
